@@ -11,13 +11,11 @@ import java.util.LongSummaryStatistics;
 
 public class AllocationCsvExporter {
 
-    private final String resultFilePath;
+    public static final AllocationCsvExporter INSTANCE = new AllocationCsvExporter();
 
-    public AllocationCsvExporter(String resultFilePath) {
-        this.resultFilePath = resultFilePath;
-    }
+    private AllocationCsvExporter() {}
 
-    public void writeResultToCsv(Maven3Version maven3Version, long[] allocations) throws IOException {
+    public void writeAllocationsToCsv(Maven3Version maven3Version, long[] allocations, String resultFilePath) throws IOException {
 
         int numberOfAllocations = allocations.length;
         CSVFormat csvFormat = buildCsvFormat(resultFilePath, numberOfAllocations);
@@ -39,32 +37,44 @@ public class AllocationCsvExporter {
     }
 
     private String[] buildCsvHeaders(int numberOfAllocations) {
-        String[] csvHeaders = new String[numberOfAllocations + 4];
+        String[] csvHeaders = new String[(2 * numberOfAllocations) + 5];
         csvHeaders[0] = "Maven version";
         csvHeaders[1] = "Average (bytes)";
-        csvHeaders[2] = "Min (bytes)";
-        csvHeaders[3] = "Max (bytes)";
+        csvHeaders[2] = "Average (Gb)";
+        csvHeaders[3] = "Min (bytes)";
+        csvHeaders[4] = "Max (bytes)";
 
         for (int i = 1; i < numberOfAllocations + 1; i++) {
-            csvHeaders[i + 3] = "Allocation" + " " + i + " "+ "(bytes)";
+            csvHeaders[i + 4] = "Allocation" + " " + i + " "+ "(bytes)";
+        }
+
+        for (int i = 1; i < numberOfAllocations + 1; i++) {
+            csvHeaders[i + 4 + numberOfAllocations] = "Allocation" + " " + i + " "+ "(Gb)";
         }
         return csvHeaders;
     }
 
     private List<Object> buildCsvRecord(Maven3Version maven3Version, long[] allocations) {
 
-        List<Object> csvRecord = new ArrayList<>(allocations.length + 4);
+        List<Object> csvRecord = new ArrayList<>((2 * allocations.length) + 5);
 
         csvRecord.add(maven3Version);
 
         LongSummaryStatistics allocationStatistics = Arrays.stream(allocations).summaryStatistics();
-        csvRecord.add(allocationStatistics.getAverage());
+        double averageAllocationInBytes = allocationStatistics.getAverage();
+        csvRecord.add(averageAllocationInBytes);
+        csvRecord.add(averageAllocationInBytes / Math.pow(1024, 3));
         csvRecord.add(allocationStatistics.getMin());
         csvRecord.add(allocationStatistics.getMax());
 
         for (int i = 0; i < allocations.length; i++) {
             csvRecord.add(allocations[i]);
         }
+
+        for (int i = 0; i < allocations.length; i++) {
+            csvRecord.add(allocations[i] / Math.pow(1024, 3));
+        }
+
         return csvRecord;
     }
 

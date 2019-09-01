@@ -28,14 +28,8 @@ public enum Maven3Version {
     ,V_3_5_4("3.5.4")
     ,V_3_6_0("3.6.0")
     ,V_3_6_1("3.6.1")
+    ,V_3_6_2("3.6.2")
     ;
-
-    private static final String MAVEN_FOLDER = findSrcTestResourcePath() + File.separator + "maven-releases";
-
-    private static String findSrcTestResourcePath() {
-        File file = new File("src/test/resources");
-        return file.getAbsolutePath();
-    }
 
     private final String numVersion;
 
@@ -50,7 +44,8 @@ public enum Maven3Version {
     }
 
     public String getMavenPath() {
-        return MAVEN_FOLDER + File.separator + "apache-maven-" + numVersion;
+        String mavenBinariesPath = BenchProperties.INSTANCE.getMavenBinariesPath();
+        return mavenBinariesPath + File.separator + "apache-maven-" + numVersion;
     }
 
     public void download() throws IOException {
@@ -72,19 +67,25 @@ public enum Maven3Version {
     }
 
     private String findMavenZipFilePath() {
-        return MAVEN_FOLDER + File.separator + "apache-maven-" + numVersion + "-bin.zip";
+        String mavenBinariesPath = BenchProperties.INSTANCE.getMavenBinariesPath();
+        return mavenBinariesPath + File.separator + "apache-maven-" + numVersion + "-bin.zip";
     }
 
     private void unzipMavenZip() throws ZipException {
         String mavenZipFilePath = findMavenZipFilePath();
         ZipFile zipFile = new ZipFile(mavenZipFilePath);
-        zipFile.extractAll(MAVEN_FOLDER);
+        String mavenBinariesPath = BenchProperties.INSTANCE.getMavenBinariesPath();
+        zipFile.extractAll(mavenBinariesPath);
     }
 
     private void deleteMavenZip() {
         String mavenZipFilePath = findMavenZipFilePath();
         File mavenZip = new File(mavenZipFilePath);
         mavenZip.delete();
+    }
+
+    public String getNumVersion() {
+        return numVersion;
     }
 
     @Override
