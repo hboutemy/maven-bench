@@ -10,7 +10,8 @@
 </p>
 <p align="center">
   <a href="#Investigate-where-heap-allocation-comes-from">Investigate where heap allocation comes from</a> •
-  <a href="#Contribute">Contribute</a> 
+  <a href="#Acknowledgments">Acknowledgments</a> •
+  <a href="#License">License</a> 
 </p>
 
 We hope that..
@@ -20,7 +21,11 @@ This project is mainly based on QuickPerf library
 
 mvn verify
 
-Remercier Hervé Boutemy
+At this moment, this project allows to benchmark and investigate the origin of heap allocation of *mvn validate*.
+
+Measures have been done executing "mvn validate" on Apache Camel project. 
+
+Feel free to use this project and contribute to it.
 
 # Set up
 
@@ -52,10 +57,14 @@ To build a 3.6.2 distribution
 
 # Benchmark heap allocation of Maven releases
 
-You can execute this  command line to launch the measurements:  ```mvn -Dtest=MvnValidateAllocationByMaven3VersionTest test```
-Before doing ti, you can close your IDE, web browser or available applications to free memory.
+Expliquer fichier property
 
-Résultas exportés dans CSV
+Measures can be launched with this command line:  ```mvn -Dtest=MvnValidateAllocationByMaven3VersionTest test```
+Before doing it, you can close your IDE, web browser or available applications to free memory.
+
+The benchmark results are exported into a UUUU file. The execution context (processor, OS, ...) is reported in TTTT file.
+
+Below
 
 exécution context
 
@@ -90,7 +99,9 @@ Faire tuto pour ouvrir JFR dans JMC ancien et récent
 
 Mettre exemple @ExpectNoJVM issue
 
-# Contribute
+
+# Acknowledgments
+Many thanks to Hervé Boutemy for his help and support to start this project.
 
 # License
 [Apache License 2.0](/LICENSE.txt)
