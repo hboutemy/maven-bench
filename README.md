@@ -68,6 +68,8 @@ Below
 
 exécution context
 
+Measures took 1 hour and 12 minutes.
+
 warm mesure
 
 

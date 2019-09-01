@@ -16,9 +16,9 @@ public class BenchProperties {
 
     private String fileName = "maven-bench.properties";
 
-    private int numberOfMeasurements;
+    private int numberOfMeasuresByMavenVersion;
 
-    private String measurementsExportPath;
+    private String exportPathOfMeasures;
 
     private int numberOfWarns;
 
@@ -32,8 +32,8 @@ public class BenchProperties {
         try {
             Properties properties = loadProperties();
 
-            String numberOfMeasurementsAsString = properties.getProperty("measurements.maven.version.number");
-            this.numberOfMeasurements = Integer.parseInt(numberOfMeasurementsAsString);
+            String numberOfMeasuresByMavenVersionAsString = properties.getProperty("measures.number-by-maven-version");
+            this.numberOfMeasuresByMavenVersion = Integer.parseInt(numberOfMeasuresByMavenVersionAsString);
 
             String numberOfWarnsAsString = properties.getProperty("warmup.number");
             this.numberOfWarns = Integer.parseInt(numberOfWarnsAsString);
@@ -42,7 +42,7 @@ public class BenchProperties {
 
             this.projectUnderTest = properties.getProperty("project-under-test.path");
 
-            this.measurementsExportPath = properties.getProperty("measurements.export.path");
+            this.exportPathOfMeasures = properties.getProperty("measures.export.path");
 
             this.maven3VersionsToMeasure = findMaven3VersionsToMeasure(properties);
 
@@ -101,12 +101,12 @@ public class BenchProperties {
         return properties.getProperty("maven.version.to").equals(maven3Version.getNumVersion());
     }
 
-    public int getNumberOfMeasurements() {
-        return numberOfMeasurements;
+    public int getNumberOfMeasuresByMavenVersion() {
+        return numberOfMeasuresByMavenVersion;
     }
 
-    public String getMeasurementsExportPath() {
-        return measurementsExportPath;
+    public String getExportPathOfMeasures() {
+        return exportPathOfMeasures;
     }
 
     public int getNumberOfWarms() {

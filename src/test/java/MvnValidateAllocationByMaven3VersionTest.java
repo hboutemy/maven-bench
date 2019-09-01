@@ -75,7 +75,7 @@ public class MvnValidateAllocationByMaven3VersionTest {
         String dateTimeAsString = getDateTimeAsString();
         String resultFilePath = buildAllocationCsvExportPath(dateTimeAsString);
 
-        int numberOfMeasuresByVersion = BenchProperties.INSTANCE.getNumberOfMeasurements();
+        int numberOfMeasuresByVersion = BenchProperties.INSTANCE.getNumberOfMeasuresByMavenVersion();
 
         Class<?> testClass = MvnValidate.class;
 
@@ -124,7 +124,7 @@ public class MvnValidateAllocationByMaven3VersionTest {
     }
 
     private String buildAllocationCsvExportPath(String dateTimeAsString) {
-        String measurementsExportPath = BenchProperties.INSTANCE.getMeasurementsExportPath();
+        String measurementsExportPath = BenchProperties.INSTANCE.getExportPathOfMeasures();
         String fileName = "maven-memory-allocation" + "-" + dateTimeAsString + ".csv";
         return measurementsExportPath + File.separator + fileName;
     }

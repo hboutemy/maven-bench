@@ -16,7 +16,7 @@ class ExecutionContextTextExporter {
 
     public void writeExecutionContextToTextFile(String dateTimeAsString) {
 
-        String filePath =  BenchProperties.INSTANCE.getMeasurementsExportPath()
+        String filePath =  BenchProperties.INSTANCE.getExportPathOfMeasures()
                          + File.separator
                          + "execution-context-" +dateTimeAsString + ".txt";
 
