@@ -40,7 +40,12 @@ git clone -n https://github.com/apache/camel.git
 git checkout c409ab7aabb971065fc8384a861904d2a2819be5
 ```
 We have selected an Apache Camel commit for which ```mvn validate``` can be applied from Maven 3.2.5 to Maven 3.6.2. 
-This Apache Camel version contains XXX modules.
+This Apache Camel version contains 841 modules.
+
+## Measure on Maven head
+To measure heap allocation on Maven head you have to before build a Maven distribution.
+To do this, you can execute```mvn -DdistributionTargetDir="{maven-distrib-location}/apache-maven-head" clean package``` by replacing {maven-distrib-location} by the url given by the *maven.binaries.path* property of maven-bench.properties. 
+
 
 ## Manually retrieve Maven 3.6.2 distribution
 
@@ -62,7 +67,7 @@ Expliquer fichier property
 Measures can be launched with this command line:  ```mvn -Dtest=MvnValidateAllocationByMaven3VersionTest test```
 Before doing it, you can close your IDE, web browser or available applications to free memory.
 
-The benchmark results are exported into a UUUU file. The execution context (processor, OS, ...) is reported in TTTT file.
+The benchmark results are exported into a maven-memory-allocation-{date-time}.csv file. The execution context (processor, OS, ...) is reported in an execution-context-{date-time}.txt file.
 
 Below
 
@@ -71,6 +76,8 @@ exécution context
 Measures took 1 hour and 12 minutes.
 
 warm mesure
+
+
 
 <p align="center">
     <img src="measures/mvn-validate-on-camel.png">
