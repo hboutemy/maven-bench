@@ -25,7 +25,7 @@ At this moment, this project allows to benchmark and investigate the origin of h
 
 Measures have been done executing "mvn validate" on Apache Camel project. 
 
-Feel free to use this project and contribute to it.
+Feel free to use this project and contribute to it!
 
 # Set up
 
