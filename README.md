@@ -72,8 +72,11 @@ Measures took 1 hour and 12 minutes.
 
 warm mesure
 
+<p align="center">
+<img src="measures/mvn-validate-on-camel.JPG" width="944" heigth="191"></p>
 
-# Investigate where heap allocation comes 
+
+# Investigate where heap allocation comes from
 
  Voir d'où vient l'allocation en heap
  En 3.2.5 mettre copie écran avec tableau de char[]
