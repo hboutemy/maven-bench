@@ -73,7 +73,7 @@ Measures took 1 hour and 12 minutes.
 warm mesure
 
 <p align="center">
-<img src="measures/mvn-validate-on-camel.JPG" width="944" heigth="191"></p>
+<img src="measures/mvn-validate-on-camel.jpg" width="944" heigth="191"></p>
 
 
 # Investigate where heap allocation comes from
