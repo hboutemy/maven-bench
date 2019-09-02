@@ -73,7 +73,7 @@ Measures took 1 hour and 12 minutes.
 warm mesure
 
 <p align="center">
-<img src="measures/maven.png"></p>
+<img src="measures/mvn-validate-on-camel.png"></p>
 
 
 # Investigate where heap allocation comes from
