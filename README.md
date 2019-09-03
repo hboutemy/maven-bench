@@ -47,7 +47,7 @@ mvn -DdistributionTargetDir="{maven-distrib-location}/apache-maven-head" clean p
 ``` 
 
 Heap size can be fixed with the help of [@HeapSize](https://github.com/quick-perf/doc/wiki/JVM-annotations#heapsize). As we are going to see thereafter, in the range of 3.2.5 to 3.6.2 Maven version, heap allocation level is the highest with Maven 3.2.5 and the smallest with Maven 3.6.2. 
-With [our execution context](measures/execution-context-2019-09-01-18-48-41.txt), Maven 3.2.5 and an heap size between 6 Go and 9 Go, one measure of heap allocation lasts around one minute. The test length is about one minute and a half with a 5 Go heap size, probably due to more garbage collection. With Maven 3.6.2, the test length is around 15 s with an heap size between 1 Go and 9 Go.
+With [our execution context](measures/execution-context-2019-09-01-18-48-41.txt), Maven 3.2.5 and an heap size between 6 Go and 9 Go, one measure of heap allocation lasts around one minute. The test length is about one minute and a half with a 5 Go heap size, probably due to more garbage collection. With Maven 3.6.2, the test length is around 15 s for an heap size between 1 Go to 9 Go.
 
 
 ### Measure on Maven head
