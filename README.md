@@ -16,7 +16,7 @@
 
 At this moment, this project allows to benchmark and investigate the origin of heap allocation caused by *mvn validate*.
 
-Measures have been done executing "mvn validate" on Apache Camel project. 
+Measures have been done executing *mvn validate* on Apache Camel project. 
 
 Feel free to use this project and contribute to it!
 
