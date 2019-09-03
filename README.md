@@ -24,36 +24,37 @@ Feel free to use this project and contribute to it!
 
 # General set up
 
-This project contains two types of test.
-*MvnValidateAllocationByMaven3VersionTest* can be used to investigate the origin of heap allocation level.
+This project contains two types of test. *MvnValidateAllocationByMaven3VersionTest* can be used to evaluate the heap allocation level for a range of Maven versions. For a given Maven version, *MvnValidateProfilingTest* can be used to investigate the origin of allocation.
 
-This general set up part describes configurations common to both test.
+This general set up part describes configurations common to both tests.
 
-For both tests, you have to give a value for the *project-under-test.path* and *maven.binaries.path* properties contained in *maven-bench.properties* file. The other properties are only used by *MvnValidateAllocationByMaven3VersionTest*.
+You have to give values to the *project-under-test.path* and *maven.binaries.path* properties contained in the *maven-bench.properties* file. The other properties are only used by *MvnValidateAllocationByMaven3VersionTest*.
 
-The needed Maven 3 distributions are downloaded by the tests. It is done in the method annotated *@Before*. See [Measure on Maven head](#Measure-on-Maven-head) part if you want to measure heap allocation of the current Maven head.
- 
-Heap size can be fixed with the help of [@HeapSize](https://github.com/quick-perf/doc/wiki/JVM-annotations#heapsize). As we are going to see thereafter, between Maven 3.2.5 and Maven 3.6.2, heap allocation value is the biggest with Maven 3.2.5 and the smallest with Maven 3.6.2. 
-With [this execution context](measures/execution-context-2019-09-01-18-48-41.txt), Maven 3.2.5 and an heap size between 6 Go and 9 Go, one measure of heap allocation lasts around one minute. The test length is about one minute and a half with a 5 Go heap size, probably due to more garbage collection. With Maven 3.6.2, the test length is around 15 s with an heap size between 1 Go and 9 Go.
-
-### Clone the project on which to apply mvn validate
-
-We you can for example use Apache Camel project to measure heap allocation of a Maven goal:
+The *project-under-test.path* represents the path of the project on which *mvn validate* will be applied. 
+Our measures the Apache Camel project. A specific version of this project was chosen to be able to apply ```mvn validate``` Maven 3.2.5 to 3.6.2:
 ```
 git clone -n https://github.com/apache/camel.git
 git checkout c409ab7aabb971065fc8384a861904d2a2819be5
 ```
-We have selected an Apache Camel commit for which ```mvn validate``` can be applied from Maven 3.2.5 to Maven 3.6.2. 
 This Apache Camel version contains 841 modules.
 
-### Measure on Maven head
-To measure heap allocation on Maven head you have to before build a Maven distribution.
-You can do this with the following command lines:
+The *maven.binaries.path* property the path where the needed Maven distributions will be automatically downloaded by the tests. Downloads are performed during *@Before* execution.
+If you want to do measures on Maven head you can execute the following commands:
 ```
 git clone https://github.com/apache/maven.git
 cd maven
 mvn -DdistributionTargetDir="{maven-distrib-location}/apache-maven-head" clean package
 ``` 
+
+Heap size can be fixed with the help of [@HeapSize](https://github.com/quick-perf/doc/wiki/JVM-annotations#heapsize). As we are going to see thereafter, between Maven 3.2.5 and Maven 3.6.2, heap allocation value is the biggest with Maven 3.2.5 and the smallest with Maven 3.6.2. 
+With [this execution context](measures/execution-context-2019-09-01-18-48-41.txt), Maven 3.2.5 and an heap size between 6 Go and 9 Go, one measure of heap allocation lasts around one minute. The test length is about one minute and a half with a 5 Go heap size, probably due to more garbage collection. With Maven 3.6.2, the test length is around 15 s with an heap size between 1 Go and 9 Go.
+
+### Clone the project on which to apply mvn validate
+
+
+
+### Measure on Maven head
+
 where {maven-distrib-location} has to be replaced with the url given by the *maven.binaries.path* property of *maven-bench.properties* file. 
 
 # Benchmark heap allocation of several Maven releases
