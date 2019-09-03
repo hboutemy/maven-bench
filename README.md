@@ -33,9 +33,6 @@ In this project we use [QuickPerf](https://github.com/quick-perf/quickperf) to m
 
 The needed Maven 3 distributions are downloaded by the tests. It is done in the method annotated *@Before*. See [Measure on Maven head](#Measure-on-Maven-head) part if you want to measure heap allocation of the current Maven head.
  
-Heap allocation level is measured with the help of [@MeasureHeapAllocation](https://github.com/quick-perf/doc/wiki/JVM-annotations#Verify-heap-allocation) QuickPerf annotation. This annotation measures the heap allocation level of the thread running the method annotated with @Test.
-Feel free to contribute to QuickPerf by adding an implementation allowing to measure the global allocation coming of all the threads! We have checked that *mvn validate* does not allocates on several threads by profiling the JVM with the help of [@ProfileJvm](https://github.com/quick-perf/doc/wiki/JVM-annotations#ProfileJvm).
-
 Heap size can be fixed with the help of [@HeapSize](https://github.com/quick-perf/doc/wiki/JVM-annotations#heapsize). As we are going to see thereafter, between Maven 3.2.5 and Maven 3.6.2, heap allocation value is the biggest with Maven 3.2.5 and the smallest with Maven 3.6.2. 
 With [this computer](measures/execution-context-2019-09-01-18-48-41.txt), Maven 3.2.5 and an heap size between 6 Go and 9 Go, one measure of heap allocation lasts around one minute. The test length is about one minute and a half with a 5 Go heap size, probably due to more garbage collection. With Maven 3.6.2, the test length is around 15 s with an heap size between 1 Go and 9 Go.
 
@@ -63,6 +60,10 @@ where {maven-distrib-location} has to be replaced with the url given by the *mav
 # Benchmark heap allocation of several Maven releases
 
 As mentioned above, *MvnValidateAllocationByMaven3VersionTest* test allows to benchmark heap allocation on several Maven 3 distributions.
+
+Heap allocation level is measured with the help of [@MeasureHeapAllocation](https://github.com/quick-perf/doc/wiki/JVM-annotations#Verify-heap-allocation) QuickPerf annotation. This annotation measures the heap allocation level of the thread running the method annotated with @Test.
+Feel free to contribute to QuickPerf by adding an implementation allowing to measure the global allocation coming of all the threads! We have checked that *mvn validate* does not allocates on several threads by profiling the JVM with the help of [@ProfileJvm](https://github.com/quick-perf/doc/wiki/JVM-annotations#ProfileJvm).
+
 Please read [General set up](#General-set-up) to get some of the set up requirements.
 
 You have also to give a value for the following properties contained in the [maven-bench.properties](src/test/resources/maven-bench.properties) file:
