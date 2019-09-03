@@ -105,7 +105,21 @@ The Maven version under test can be set with the MAVEN_3_VERSION constant:
     public static Maven3Version MAVEN_3_VERSION = Maven3Version.V_3_6_2;
 ```
 
-A test method is annotated with [@ProfileJvm](https://github.com/quick-perf/doc/wiki/JVM-annotations#Profile-or-check-your-JVM).
+A test method is annotated with [@ProfileJvm](https://github.com/quick-perf/doc/wiki/JVM-annotations#Profile-or-check-your-JVM) to profile the test method with Java Flight Recorder (JFR).
+
+The JFR file location is going to be displayed in the console:
+```
+[QUICK PERF] JVM was profiled with Java File Recorder (JFR).
+The recording file can be found here: C:\Users\JEANBI~1\AppData\Local\Temp\QuickPerf-46868616\jvm-profiling.jfr
+You can open it with Java Mission Control (JMC).
+```
+
+You can open it with Java Mission Control. 
+
+<p align="center">
+    <img src="Maven3.2.5-JMC.5.5JPG.jpg">
+</p>
+
 
 head
 

@@ -15,7 +15,7 @@ import java.util.List;
 @RunWith(QuickPerfJUnitRunner.class)
 public class MvnValidateProfilingTest {
 
-    public static Maven3Version MAVEN_3_VERSION = Maven3Version.V_3_6_2;
+    public static Maven3Version MAVEN_3_VERSION = Maven3Version.V_3_2_5;
 
     private final String pathOfMavenProjectUnderTest = BenchProperties.INSTANCE.getPathOfProjectUnderTest();
 
