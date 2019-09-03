@@ -14,14 +14,7 @@
   <a href="#License">License</a> 
 </p>
 
-We hope that..
-can help
-
-This project is mainly based on QuickPerf library
-
-mvn verify
-
-At this moment, this project allows to benchmark and investigate the origin of heap allocation of *mvn validate*.
+At this moment, this project allows to benchmark and investigate the origin of heap allocation caused by *mvn validate*.
 
 Measures have been done executing "mvn validate" on Apache Camel project. 
 
