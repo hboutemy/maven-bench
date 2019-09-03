@@ -31,7 +31,7 @@ This general set up part describes configurations common to both tests.
 You have to give values to the *project-under-test.path* and *maven.binaries.path* properties contained in the *maven-bench.properties* file. The other properties are only used by *MvnValidateAllocationByMaven3VersionTest*.
 
 The *project-under-test.path* represents the path of the project on which *mvn validate* will be applied. 
-Our measures the Apache Camel project. A specific version of this project was chosen to be able to apply ```mvn validate``` Maven 3.2.5 to 3.6.2:
+Our measures are based on the Apache Camel project. A specific version of this project was chosen to be able to apply ```mvn validate``` Maven 3.2.5 to 3.6.2:
 ```
 git clone -n https://github.com/apache/camel.git
 git checkout c409ab7aabb971065fc8384a861904d2a2819be5
@@ -48,9 +48,6 @@ mvn -DdistributionTargetDir="{maven-distrib-location}/apache-maven-head" clean p
 
 Heap size can be fixed with the help of [@HeapSize](https://github.com/quick-perf/doc/wiki/JVM-annotations#heapsize). As we are going to see thereafter, between Maven 3.2.5 and Maven 3.6.2, heap allocation value is the biggest with Maven 3.2.5 and the smallest with Maven 3.6.2. 
 With [this execution context](measures/execution-context-2019-09-01-18-48-41.txt), Maven 3.2.5 and an heap size between 6 Go and 9 Go, one measure of heap allocation lasts around one minute. The test length is about one minute and a half with a 5 Go heap size, probably due to more garbage collection. With Maven 3.6.2, the test length is around 15 s with an heap size between 1 Go and 9 Go.
-
-### Clone the project on which to apply mvn validate
-
 
 
 ### Measure on Maven head
