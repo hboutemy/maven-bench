@@ -54,15 +54,14 @@ We have selected an Apache Camel commit for which ```mvn validate``` can be appl
 This Apache Camel version contains 841 modules.
 
 ## Measure on Maven head
-// Rajouter cd dans doc et tester
-
 To measure heap allocation on Maven head you have to before build a Maven distribution.
-To do this, you can clone Maven head:
+You can do this with the following command lines:
 ```
-mvn clone https://github.com/apache/maven.git
-```
-And after that, you can execute
-```mvn -DdistributionTargetDir="{maven-distrib-location}/apache-maven-head" clean package``` by replacing {maven-distrib-location} by the url given by the *maven.binaries.path* property of *maven-bench.properties* file. 
+git clone https://github.com/apache/maven.git
+cd maven
+mvn -DdistributionTargetDir="{maven-distrib-location}/apache-maven-head" clean package
+``` 
+where {maven-distrib-location} has to be replaced with the url given by the *maven.binaries.path* property of *maven-bench.properties* file. 
 
 # Benchmark heap allocation of several Maven releases
 
