@@ -72,7 +72,7 @@ Before doing it, you can close your IDE, web browser or other applications to fr
 
 The benchmark results are exported into a *maven-memory-allocation-{date-time}.csv* file. The execution context (processor, OS, ...) is reported in an *execution-context-{date-time}.txt* file.
 
-For several Maven versions, the following graphic gives the average of heap allocation caused by the application of ```mvn validate``` on Apache Camel:
+For several Maven versions, the following graphic gives the average of ten heap allocations caused by the application of ```mvn validate``` on Apache Camel:
 <p align="center">
     <img src="measures/mvn-validate-on-camel.png">
 </p>
