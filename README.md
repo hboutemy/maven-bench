@@ -45,7 +45,7 @@ Feel free to contribute to QuickPerf by adding an implementation allowing to mea
 We check that *mvn validate* does not allocates on several thread by profiling the JVM with the help of [@ProfileJvm](https://github.com/quick-perf/doc/wiki/JVM-annotations#ProfileJvm).
 
 @HeapSize allows to fix the heap size. As we are going to see thereafter, between Maven 3.2.5 and Maven 3.6.2, heap allocation value is the biggest with Maven 3.2.5 and the smallest with Maven 3.6.2. 
-With [this computer](https://github.com/jeanbisutti/maven-bench/blob/master/measures/execution-context-2019-09-01-18-48-41.txt], 
+With [this computer](measures/execution-context-2019-09-01-18-48-41.txt), 
 
 
 
