@@ -6,7 +6,7 @@
 
 <p align="center">
   <a href="#General-set-up">General set up</a> •
-  <a href="#Benchmark-heap-allocation-Maven-releases">Benchmark heap allocation of Maven releasess</a>
+  <a href="#Benchmark-heap-allocation-of-several-Maven-releases">Benchmark heap allocation of Maven releasess</a>
 </p>
 <p align="center">
   <a href="#Investigate-where-heap-allocation-comes-from">Investigate where heap allocation comes from</a> •
@@ -67,7 +67,7 @@ To measure heap allocation on Maven head you have to before build a Maven distri
 To do this, you can execute```mvn -DdistributionTargetDir="{maven-distrib-location}/apache-maven-head" clean package``` by replacing {maven-distrib-location} by the url given by the *maven.binaries.path* property of *maven-bench.properties* file. 
 
 
-# Benchmark heap allocation of Maven releases
+# Benchmark heap allocation of several Maven releases
 
 Expliquer fichier property
 
