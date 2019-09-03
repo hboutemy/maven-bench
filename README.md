@@ -86,19 +86,14 @@ For several Maven versions, the following graphic gives the average of heap allo
 <p align="center">
     <img src="measures/mvn-validate-on-camel.png">
 </p>
-<p align="center">Heap allocation after executing <i>mvn validate</i> on Apache Camel for several Maven versions<p>
 
 For this graphics you can consult:
 * [the measures](measures/maven-memory-allocation-2019-09-01-18-48-41.csv)
 * [the execution context](measures/execution-context-2019-09-01-18-48-41.txt)
 
-In these measures, the heap allocation decreases from ~7 Go to ~3 Go between Maven 3.6.1 to Maven 3.6.2.
-
 Measures took 1 hour and 12 minutes.
 
-
-
-
+In these measures, the heap allocation decreases from ~7 Go to ~3 Go between Maven 3.6.1 to Maven 3.6.2.
 
 # Investigate where heap allocation comes from
 
