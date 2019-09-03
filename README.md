@@ -4,12 +4,6 @@
 </blockquote>
 </div>
 
-At this moment, this project allows to benchmark and investigate the origin of heap allocation caused by *mvn validate*.
-
-Measures have been done executing "mvn validate" on Apache Camel project. 
-
-Feel free to use this project and contribute to it!
-
 <p align="center">
   <a href="#General-set-up">General set up</a> •
   <a href="#Benchmark-heap-allocation-of-several-Maven-releases">Benchmark heap allocation of several Maven releases</a>
@@ -19,6 +13,12 @@ Feel free to use this project and contribute to it!
   <a href="#Acknowledgments">Acknowledgments</a> •
   <a href="#License">License</a> 
 </p>
+
+At this moment, this project allows to benchmark and investigate the origin of heap allocation caused by *mvn validate*.
+
+Measures have been done executing "mvn validate" on Apache Camel project. 
+
+Feel free to use this project and contribute to it!
 
 # General set up
 
