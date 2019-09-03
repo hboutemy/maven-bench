@@ -5,7 +5,7 @@
 </div>
 
 <p align="center">
-  <a href="#Set-up">Set up</a> •
+  <a href="#General-set-up">General set up</a> •
   <a href="#Benchmark-heap-allocation-Maven-releases">Benchmark heap allocation of Maven releasess</a>
 </p>
 <p align="center">
@@ -27,11 +27,29 @@ Measures have been done executing "mvn validate" on Apache Camel project.
 
 Feel free to use this project and contribute to it!
 
-# Set up
+# General Set up
 
-Automatically download of Maven distribution
+This project contains two types of test.
+*MvnValidateAllocationByMaven3VersionTest* allows to benchmark heap allocation on several Maven 3 distributions. *MvnValidateTest* is more dedicated to get an idea of heap allocation level and to investigate its origin.
+
+This general set up part describes configurations common to both test.
+
+In this project we use [QuickPerf](https://github.com/quick-perf/quickperf) to measure and investigate heap allocation level.
+
+The needed Maven 3 distributions are downloaded by the tests. It is done in method annotated *@Before*. See [Measure on Maven head](#Measure-on-Maven-head) part if you want to measure heap allocation of the current Maven head.
+ 
+Heap allocation level is measured with the help of [*@MeasureHeapAllocation*](https://github.com/quick-perf/doc/wiki/JVM-annotations#Verify-heap-allocation) QuickPerf annotation. This annotation allows to measure heap allocation level of the method annotated with @Test.
+) QuickPerf annotation. This annotation measures the heap allocation level of the thread running the method annotated @Test.
+Feel free to contribute to QuickPerf by adding an implementation allowing to measure the global allocation coming of all the threads!
+
+We check that *mvn validate* does not allocates on several thread by profiling the JVM with the help of [@ProfileJvm](https://github.com/quick-perf/doc/wiki/JVM-annotations#ProfileJvm).
+
+@HeapSize allows to fix the heap size.
+
 
 properties
+
+
 ## Clone the project on which to apply mvn validate
 
 We you can for example use Apache Camel project to measure heap allocation of a Maven goal:
@@ -43,21 +61,10 @@ We have selected an Apache Camel commit for which ```mvn validate``` can be appl
 This Apache Camel version contains 841 modules.
 
 ## Measure on Maven head
+// Rajouter cd dans doc et tester
+
 To measure heap allocation on Maven head you have to before build a Maven distribution.
 To do this, you can execute```mvn -DdistributionTargetDir="{maven-distrib-location}/apache-maven-head" clean package``` by replacing {maven-distrib-location} by the url given by the *maven.binaries.path* property of maven-bench.properties. 
-
-
-## Manually retrieve Maven 3.6.2 distribution
-
-At his time, 3.6.2 artifacts are going to be released.
-These artifacts can't be automatically downloaded by this test bench. 
-Please download these artifacts from [https://dist.apache.org/repos/dist/dev/maven/maven-3/3.6.2/binaries/](https://dist.apache.org/repos/dist/dev/maven/maven-3/3.6.2/binaries/).
-After that, please paste the 3.6.2 distribution in the location pointed by the *maven.binaries.path* property contained in *maven-bench.properties* file.
-
-At his time, Maven 3.6.2 is not yet officialy released.
-This test bench is not able to automatically download.
-Waiting for the official 3.6.2 release, please download 3.6.2 artifacts from the Github repository of Maven]() and 
-To build a 3.6.2 distribution
 
 
 # Benchmark heap allocation of Maven releases

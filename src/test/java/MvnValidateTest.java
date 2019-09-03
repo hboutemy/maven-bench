@@ -16,7 +16,7 @@ import java.util.List;
 @RunWith(QuickPerfJUnitRunner.class)
 public class MvnValidateTest {
 
-    public static Maven3Version MAVEN_3_VERSION = Maven3Version.V_3_2_5;
+    public static Maven3Version MAVEN_3_VERSION = Maven3Version.V_3_6_2;
 
     private final String pathOfMavenProjectUnderTest = BenchProperties.INSTANCE.getPathOfProjectUnderTest();
 
@@ -46,8 +46,8 @@ public class MvnValidateTest {
 
     //@ExpectNoJvmIssue
     @HeapSize(value = 9, unit = AllocationUnit.GIGA_BYTE)
-    //@MeasureHeapAllocation
-    @ProfileJvm
+    @MeasureHeapAllocation
+    //@ProfileJvm
     @Test
     public void execute_maven_validate() throws VerificationException {
         verifier.executeGoals(validate);
