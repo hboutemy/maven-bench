@@ -31,7 +31,7 @@ This general set up part describes configurations common to both test.
 
 In this project we use [QuickPerf](https://github.com/quick-perf/quickperf) to measure and investigate heap allocation level.
 
-The needed Maven 3 distributions are downloaded by the tests. It is done in method annotated *@Before*. See [Measure on Maven head](#Measure-on-Maven-head) part if you want to measure heap allocation of the current Maven head.
+The needed Maven 3 distributions are downloaded by the tests. It is done in the method annotated *@Before*. See [Measure on Maven head](#Measure-on-Maven-head) part if you want to measure heap allocation of the current Maven head.
  
 Heap allocation level is measured with the help of [@MeasureHeapAllocation](https://github.com/quick-perf/doc/wiki/JVM-annotations#Verify-heap-allocation) QuickPerf annotation. This annotation allows to measure heap allocation level of the method annotated with @Test.
 ) QuickPerf annotation. This annotation measures the heap allocation level of the thread running the method annotated @Test.
