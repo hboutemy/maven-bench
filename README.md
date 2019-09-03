@@ -57,11 +57,29 @@ This Apache Camel version contains 841 modules.
 // Rajouter cd dans doc et tester
 
 To measure heap allocation on Maven head you have to before build a Maven distribution.
-To do this, you can execute```mvn -DdistributionTargetDir="{maven-distrib-location}/apache-maven-head" clean package``` by replacing {maven-distrib-location} by the url given by the *maven.binaries.path* property of *maven-bench.properties* file. 
+To do this, you can clone Maven head:
+```
+mvn clone https://github.com/apache/maven.git
+```
+And after that, you can execute
+```mvn -DdistributionTargetDir="{maven-distrib-location}/apache-maven-head" clean package``` by replacing {maven-distrib-location} by the url given by the *maven.binaries.path* property of *maven-bench.properties* file. 
 
 # Benchmark heap allocation of several Maven releases
 
+As mentioned above, *MvnValidateAllocationByMaven3VersionTest* test allows to benchmark heap allocation on several Maven 3 distributions.
+Please read [General set up](#General-set-up) some of the set up requirements.
+
+You have also to give a value for the following properties contained in the ["maven-bench.properties"](src/test/resources/maven-bench.properties) file:
+* maven.version.from
+* maven.version.to
+* warmup.number
+* measures.number-by-maven-version
+The meaning of these properties is given in the 
+
 Expliquer fichier property
+
+head
+
 
 Measures can be launched with this command line:  ```mvn -Dtest=MvnValidateAllocationByMaven3VersionTest test```
 Before doing it, you can close your IDE, web browser or available applications to free memory.
@@ -86,6 +104,8 @@ warm mesure
 
 
 # Investigate where heap allocation comes from
+
+head
 
 Changement version de Maven
 
