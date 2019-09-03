@@ -68,7 +68,7 @@ You have also to give a value for the following properties contained in the [mav
 The meaning of these properties is given in the [maven-bench.properties](src/test/resources/maven-bench.properties) file.
 
 Measures can be launched with this command line: ```mvn -Dtest=MvnValidateAllocationByMaven3VersionTest test```.
-Before doing it, you can close your IDE, web browser or available applications to free memory.
+Before doing it, you can close your IDE, web browser or other applications to free memory.
 
 The benchmark results are exported into a *maven-memory-allocation-{date-time}.csv* file. The execution context (processor, OS, ...) is reported in an *execution-context-{date-time}.txt* file.
 
