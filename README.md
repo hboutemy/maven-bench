@@ -92,6 +92,7 @@ For this graphics you can consult:
 * [the measures](measures/maven-memory-allocation-2019-09-01-18-48-41.csv)
 * [the execution context](measures/execution-context-2019-09-01-18-48-41.txt)
 
+In these measures, the heap allocation decreases from ~7 Go to ~3 Go between Maven 3.6.1 to Maven 3.6.2.
 
 Measures took 1 hour and 12 minutes.
 
