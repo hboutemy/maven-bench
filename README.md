@@ -6,7 +6,7 @@
 
 <p align="center">
   <a href="#General-set-up">General set up</a> •
-  <a href="#Benchmark-heap-allocation-of-several-Maven-releases">Benchmark heap allocation of Maven releasess</a>
+  <a href="#Benchmark-heap-allocation-of-several-Maven-releases">Benchmark heap allocation of several Maven releases</a>
 </p>
 <p align="center">
   <a href="#Investigate-where-heap-allocation-comes-from">Investigate where heap allocation comes from</a> •
