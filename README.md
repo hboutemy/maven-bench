@@ -27,7 +27,7 @@ Measures have been done executing "mvn validate" on Apache Camel project.
 
 Feel free to use this project and contribute to it!
 
-# General Set up
+# General set up
 
 This project contains two types of test.
 *MvnValidateAllocationByMaven3VersionTest* allows to benchmark heap allocation on several Maven 3 distributions. *MvnValidateTest* is more dedicated to get an idea of heap allocation level and to investigate its origin.
@@ -44,7 +44,7 @@ Feel free to contribute to QuickPerf by adding an implementation allowing to mea
 
 We check that *mvn validate* does not allocates on several thread by profiling the JVM with the help of [@ProfileJvm](https://github.com/quick-perf/doc/wiki/JVM-annotations#ProfileJvm).
 
-@HeapSize allows to fix the heap size.
+@HeapSize allows to fix the heap size. As we are going to see thereafter, between Maven 3.2.5 and Maven 3.6.2, heap allocation value is maximum for 
 
 
 properties
