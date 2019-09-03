@@ -23,7 +23,7 @@ Feel free to use this project and contribute to it!
 # General set up
 
 This project contains two types of test.
-*MvnValidateAllocationByMaven3VersionTest* allows to benchmark heap allocation on several Maven 3 distributions. *MvnValidateTest* is more dedicated to get an idea of heap allocation level and to investigate its origin.
+*MvnValidateAllocationByMaven3VersionTest* allows to benchmark heap allocation on several Maven 3 distributions. *MvnValidateProfilingTest* is more dedicated to get an idea of heap allocation level and to investigate its origin.
 
 This general set up part describes configurations common to both test.
 
@@ -67,7 +67,7 @@ And after that, you can execute
 # Benchmark heap allocation of several Maven releases
 
 As mentioned above, *MvnValidateAllocationByMaven3VersionTest* test allows to benchmark heap allocation on several Maven 3 distributions.
-Please read [General set up](#General-set-up) some of the set up requirements.
+Please read [General set up](#General-set-up) to get some of the set up requirements.
 
 You have also to give a value for the following properties contained in the [maven-bench.properties](src/test/resources/maven-bench.properties) file:
 * maven.version.from
@@ -77,7 +77,7 @@ You have also to give a value for the following properties contained in the [mav
 
 The meaning of these properties is given in the [maven-bench.properties](src/test/resources/maven-bench.properties) file.
 
-Measures can be launched with this command line:  ```mvn -Dtest=MvnValidateAllocationByMaven3VersionTest test```
+Measures can be launched with this command line: ```mvn -Dtest=MvnValidateAllocationByMaven3VersionTest test```
 Before doing it, you can close your IDE, web browser or available applications to free memory.
 
 The benchmark results are exported into a *maven-memory-allocation-{date-time}.csv* file. The execution context (processor, OS, ...) is reported in an *execution-context-{date-time}.txt* file.
@@ -96,6 +96,16 @@ Measures took 1 hour and 12 minutes.
 In these measures, the heap allocation decreases from ~7 Go to ~3 Go between Maven 3.6.1 to Maven 3.6.2.
 
 # Investigate where heap allocation comes from
+
+You can use *MvnValidateProfilingTest* to understand the origin of heap allocation.
+Some of the set up requirements can be found in [General set up](#General-set-up) part.
+
+The Maven version under test can be set with the MAVEN_3_VERSION constant:
+``` java
+    public static Maven3Version MAVEN_3_VERSION = Maven3Version.V_3_6_2;
+```
+
+A test method is annotated with [@ProfileJvm](https://github.com/quick-perf/doc/wiki/JVM-annotations#Profile-or-check-your-JVM).
 
 head
 

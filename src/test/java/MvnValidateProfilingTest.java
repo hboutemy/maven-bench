@@ -6,14 +6,14 @@ import org.junit.runner.RunWith;
 import org.quickperf.junit4.QuickPerfJUnitRunner;
 import org.quickperf.jvm.allocation.AllocationUnit;
 import org.quickperf.jvm.annotations.HeapSize;
-import org.quickperf.jvm.annotations.MeasureHeapAllocation;
+import org.quickperf.jvm.annotations.ProfileJvm;
 
 import java.io.IOException;
 import java.util.Collections;
 import java.util.List;
 
 @RunWith(QuickPerfJUnitRunner.class)
-public class MvnValidateTest {
+public class MvnValidateProfilingTest {
 
     public static Maven3Version MAVEN_3_VERSION = Maven3Version.V_3_6_2;
 
@@ -22,6 +22,13 @@ public class MvnValidateTest {
     private Verifier verifier;
 
     private final List<String> validate = Collections.singletonList("validate");
+
+    @ProfileJvm
+    @HeapSize(value = 6, unit = AllocationUnit.GIGA_BYTE)
+    @Test
+    public void execute_maven_validate() throws VerificationException {
+        verifier.executeGoals(validate);
+    }
 
     @Before
     public void before() throws IOException, VerificationException {
@@ -41,13 +48,6 @@ public class MvnValidateTest {
         verifier = new Verifier(pathOfMavenProjectUnderTest);
         verifier.setSystemProperty("maven.multiModuleProjectDirectory", pathOfMavenProjectUnderTest);
 
-    }
-
-    @HeapSize(value = 6, unit = AllocationUnit.GIGA_BYTE)
-    @MeasureHeapAllocation
-    @Test
-    public void execute_maven_validate() throws VerificationException {
-        verifier.executeGoals(validate);
     }
 
 }
