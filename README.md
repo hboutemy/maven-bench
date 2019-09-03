@@ -23,7 +23,7 @@ Feel free to use this project and contribute to it!
 # General set up
 
 This project contains two types of test.
-*MvnValidateAllocationByMaven3VersionTest* allows to benchmark heap allocation on several Maven 3 distributions. *MvnValidateProfilingTest* is more dedicated to get an idea of heap allocation level and to investigate its origin.
+*MvnValidateAllocationByMaven3VersionTest* can be used to investigate the origin of heap allocation level.
 
 This general set up part describes configurations common to both test.
 
