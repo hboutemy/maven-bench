@@ -16,6 +16,8 @@
 
 At this moment, this project allows to benchmark and investigate the origin of heap allocation caused by *mvn validate*.
 
+This project is based on [QuickPerf](https://github.com/quick-perf/quickperf) to measure and investigate heap allocation level.
+
 Measures have been done executing *mvn validate* on Apache Camel project. 
 
 Feel free to use this project and contribute to it!
@@ -27,9 +29,9 @@ This project contains two types of test.
 
 This general set up part describes configurations common to both test.
 
-:point_right: For both tests, you have to give a value for the *project-under-test.path* and *maven.binaries.path* properties contained in *maven-bench.properties* file. The other properties are only used by *MvnValidateAllocationByMaven3VersionTest*.
+## Configuration
 
-In this project we use [QuickPerf](https://github.com/quick-perf/quickperf) to measure and investigate heap allocation level.
+For both tests, you have to give a value for the *project-under-test.path* and *maven.binaries.path* properties contained in *maven-bench.properties* file. The other properties are only used by *MvnValidateAllocationByMaven3VersionTest*.
 
 The needed Maven 3 distributions are downloaded by the tests. It is done in the method annotated *@Before*. See [Measure on Maven head](#Measure-on-Maven-head) part if you want to measure heap allocation of the current Maven head.
  
