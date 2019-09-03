@@ -103,7 +103,7 @@ The recording file can be found here: C:\Users\JEANBI~1\AppData\Local\Temp\Quick
 You can open it with Java Mission Control (JMC).
 ```
 
-You can open it with Java Mission Control. 
+You can open it with Java Mission Control (JMC). 
 
 Below a JFR file for Maven 3.2.5 and opened with JMC 5.5:
 <p align="center">
