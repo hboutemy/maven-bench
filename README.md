@@ -55,7 +55,7 @@ With [our execution context](measures/execution-context-2019-09-01-18-48-41.txt)
 *MvnValidateAllocationByMaven3VersionTest* test allows to benchmark the heap allocation level on several Maven 3 distributions.
 
 Heap allocation level is measured with the help of [@MeasureHeapAllocation](https://github.com/quick-perf/doc/wiki/JVM-annotations#Verify-heap-allocation) QuickPerf annotation. This annotation measures the heap allocation level of the thread running the method annotated with @Test.
-Feel free to contribute to QuickPerf by adding a feature allowing to measure the allocation level aggregated across all the threads! We have checked that *mvn validate* does not allocates on several threads by profiling the JVM with the help of [@ProfileJvm](https://github.com/quick-perf/doc/wiki/JVM-annotations#ProfileJvm).
+Feel free to contribute to QuickPerf by adding a feature allowing to measure the allocation level aggregated across all the threads! With *mvn validate*, we have checked that Maven code is not multithreaded by profiling the JVM with the help of [@ProfileJvm](https://github.com/quick-perf/doc/wiki/JVM-annotations#ProfileJvm).
 
 Please read [General set up](#General-set-up) to get some of the set up requirements.
 
