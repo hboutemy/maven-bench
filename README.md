@@ -31,7 +31,7 @@ This general set up part describes configurations common to both tests.
 You have to give values to the *project-under-test.path* and *maven.binaries.path* properties contained in the *maven-bench.properties* file. The other properties are only used by *MvnValidateAllocationByMaven3VersionTest*.
 
 The *project-under-test.path* represents the path of the project on which *mvn validate* will be applied. 
-Our measures are based on the Apache Camel project. A specific version of this project was chosen to be able to apply ```mvn validate``` from Maven 3.2.5 to 3.6.2:
+Our measures are based on the Apache Camel project. A specific version of this project was chosen to be able to apply *mvn validate* from Maven 3.2.5 to 3.6.2:
 ```
 git clone -n https://github.com/apache/camel.git
 git checkout c409ab7aabb971065fc8384a861904d2a2819be5
@@ -71,7 +71,7 @@ Before doing it, you can close your IDE, web browser or other applications to fr
 
 The benchmark results are exported into a *maven-memory-allocation-{date-time}.csv* file. The execution context (processor, OS, ...) is reported in an *execution-context-{date-time}.txt* file.
 
-For several Maven versions, the following graphic gives the average of ten heap allocations caused by the application of ```mvn validate``` on Apache Camel:
+For several Maven versions, the following graphic gives the average of ten heap allocations caused by the application of *mvn validate* on Apache Camel:
 <p align="center">
     <img src="measures/mvn-validate-on-camel.png">
 </p>
