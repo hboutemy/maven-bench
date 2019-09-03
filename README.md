@@ -77,30 +77,25 @@ You have also to give a value for the following properties contained in the [mav
 
 The meaning of these properties is given in the [maven-bench.properties](src/test/resources/maven-bench.properties) file.
 
-Expliquer fichier property
-
-head
-
-
 Measures can be launched with this command line:  ```mvn -Dtest=MvnValidateAllocationByMaven3VersionTest test```
 Before doing it, you can close your IDE, web browser or available applications to free memory.
 
 The benchmark results are exported into a *maven-memory-allocation-{date-time}.csv* file. The execution context (processor, OS, ...) is reported in an *execution-context-{date-time}.txt* file.
 
-Below
-
-exécution context
-
-Measures took 1 hour and 12 minutes.
-
-warm mesure
-
-
-
+For several Maven versions, the following graphic gives the average of heap allocation caused by the application of ```mvn validate``` on Apache Camel:
 <p align="center">
     <img src="measures/mvn-validate-on-camel.png">
 </p>
 <p align="center">Heap allocation after executing <i>mvn validate</i> on Apache Camel for several Maven versions<p>
+
+For this graphics you can consult:
+* [the measures](measures/maven-memory-allocation-2019-09-01-18-48-41.csv)
+* [the execution context](measures/execution-context-2019-09-01-18-48-41.txt)
+
+
+Measures took 1 hour and 12 minutes.
+
+
 
 
 
@@ -128,8 +123,6 @@ Mesure profiling + JMC
 Montrer exemples capture JMC pour 3.5.2 et 3.6.2
 
 => 1 thread
-
-mettre taille heap 3.5.2 et 3.6.2
 
 Faire tuto pour ouvrir JFR dans JMC ancien et récent
 
