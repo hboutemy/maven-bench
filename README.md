@@ -117,7 +117,7 @@ You can open it with Java Mission Control (JMC).
 You can open it with Java Mission Control. 
 
 <p align="center">
-    <img src="Maven3.2.5-JMC.5.5JPG.jpg">
+    <img src="measures/Maven3.2.5-JMC.5.5JPG.jpg">
 </p>
 
 
