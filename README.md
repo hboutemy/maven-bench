@@ -64,7 +64,7 @@ This Apache Camel version contains 841 modules.
 // Rajouter cd dans doc et tester
 
 To measure heap allocation on Maven head you have to before build a Maven distribution.
-To do this, you can execute```mvn -DdistributionTargetDir="{maven-distrib-location}/apache-maven-head" clean package``` by replacing {maven-distrib-location} by the url given by the *maven.binaries.path* property of maven-bench.properties. 
+To do this, you can execute```mvn -DdistributionTargetDir="{maven-distrib-location}/apache-maven-head" clean package``` by replacing {maven-distrib-location} by the url given by the *maven.binaries.path* property of *maven-bench.properties* file. 
 
 
 # Benchmark heap allocation of Maven releases
