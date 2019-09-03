@@ -7,7 +7,6 @@ import org.quickperf.junit4.QuickPerfJUnitRunner;
 import org.quickperf.jvm.allocation.AllocationUnit;
 import org.quickperf.jvm.annotations.HeapSize;
 import org.quickperf.jvm.annotations.MeasureHeapAllocation;
-import org.quickperf.jvm.annotations.ProfileJvm;
 
 import java.io.IOException;
 import java.util.Collections;
@@ -44,10 +43,8 @@ public class MvnValidateTest {
 
     }
 
-    //@ExpectNoJvmIssue
-    @HeapSize(value = 9, unit = AllocationUnit.GIGA_BYTE)
+    @HeapSize(value = 6, unit = AllocationUnit.GIGA_BYTE)
     @MeasureHeapAllocation
-    //@ProfileJvm
     @Test
     public void execute_maven_validate() throws VerificationException {
         verifier.executeGoals(validate);

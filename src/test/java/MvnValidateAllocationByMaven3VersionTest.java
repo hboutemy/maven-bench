@@ -52,7 +52,7 @@ public class MvnValidateAllocationByMaven3VersionTest {
             verifier.setSystemProperty("maven.multiModuleProjectDirectory", pathOfMavenProjectUnderTest);
         }
 
-        @HeapSize(value = 9, unit = AllocationUnit.GIGA_BYTE)
+        @HeapSize(value = 6, unit = AllocationUnit.GIGA_BYTE)
         @MeasureHeapAllocation
         @Test
         public void execute_maven_validate() throws VerificationException {
