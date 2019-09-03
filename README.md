@@ -16,7 +16,7 @@
 
 At this moment, this project allows to benchmark and investigate the origin of heap allocation caused by *mvn validate*.
 
-This project is based on [QuickPerf](https://github.com/quick-perf/quickperf) to measure and investigate heap allocation level.
+This project is based on [QuickPerf](https://github.com/quick-perf/quickperf) to measure and investigate the heap allocation level.
 
 Measures have been done executing *mvn validate* on Apache Camel project. 
 
