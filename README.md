@@ -69,12 +69,12 @@ And after that, you can execute
 As mentioned above, *MvnValidateAllocationByMaven3VersionTest* test allows to benchmark heap allocation on several Maven 3 distributions.
 Please read [General set up](#General-set-up) some of the set up requirements.
 
-You have also to give a value for the following properties contained in the ["maven-bench.properties"](src/test/resources/maven-bench.properties) file:
+You have also to give a value for the following properties contained in the [maven-bench.properties](src/test/resources/maven-bench.properties) file:
 * maven.version.from
 * maven.version.to
 * warmup.number
 * measures.number-by-maven-version
-The meaning of these properties is given in the 
+The meaning of these properties is given in the [maven-bench.properties](src/test/resources/maven-bench.properties).
 
 Expliquer fichier property
 
