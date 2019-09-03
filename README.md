@@ -39,16 +39,15 @@ git checkout c409ab7aabb971065fc8384a861904d2a2819be5
 This Apache Camel version contains 841 modules.
 
 The *maven.binaries.path* property corresponds to the path where the needed Maven distributions will be automatically downloaded by the tests. Downloads are performed during *@Before* execution.
-If you want to apply measures on Maven head you can execute the following commands where {maven-distrib-location} has to be replaced with the url given by the *maven.binaries.path* property of *maven-bench.properties* file. 
-:
+If you want to apply measures on Maven head, you can execute the following commands where {maven-distrib-location} has to be replaced with the url given by the *maven.binaries.path* property of *maven-bench.properties* file:
 ```
 git clone https://github.com/apache/maven.git
 cd maven
 mvn -DdistributionTargetDir="{maven-distrib-location}/apache-maven-head" clean package
 ``` 
 
-Heap size can be fixed with the help of [@HeapSize](https://github.com/quick-perf/doc/wiki/JVM-annotations#heapsize). As we are going to see thereafter, in the range of 3.2.5 to 3.6.2 Maven version, heap allocation level is the highest with Maven 3.2.5 and the smallest with Maven 3.6.2. 
-With [our execution context](measures/execution-context-2019-09-01-18-48-41.txt), Maven 3.2.5 and an heap size between 6 Go and 9 Go, one measure of heap allocation lasts around one minute. The test length is about one minute and a half with a 5 Go heap size, probably due to more garbage collection. With Maven 3.6.2, the test length is around 15 s for an heap size between 1 Go to 9 Go.
+Heap size can be fixed with the help of [@HeapSize](https://github.com/quick-perf/doc/wiki/JVM-annotations#heapsize). As we are going to see thereafter, in the range of 3.2.5 to 3.6.2 Maven versions, heap allocation level is the highest with Maven 3.2.5 and the smallest with Maven 3.6.2. 
+With [our execution context](measures/execution-context-2019-09-01-18-48-41.txt), Maven 3.2.5 and a heap size between 6 Go and 9 Go, one measure of heap allocation lasts around one minute. The test length is about one minute and a half with a 5 Go heap size, probably due to more garbage collection. With Maven 3.6.2, the test length is around 15 s for a heap size between 1 Go to 9 Go.
 
 # Benchmark heap allocation of several Maven releases
 
@@ -59,7 +58,7 @@ Feel free to contribute to QuickPerf by adding a feature allowing to measure the
 
 Please read [General set up](#General-set-up) to get some of the set up requirements.
 
-You have also to give a value for the following properties contained in the [maven-bench.properties](src/test/resources/maven-bench.properties) file:
+You also have to give a value for the following properties contained in the [maven-bench.properties](src/test/resources/maven-bench.properties) file:
 * maven.version.from
 * maven.version.to
 * warmup.number
@@ -77,7 +76,7 @@ For several Maven versions, the following graphic gives the average of ten heap 
     <img src="measures/mvn-validate-on-camel.png">
 </p>
 
-For this graphics you can consult:
+For this graphic you can consult:
 * [the measures](measures/maven-memory-allocation-2019-09-01-18-48-41.csv)
 * [the execution context](measures/execution-context-2019-09-01-18-48-41.txt)
 
@@ -106,7 +105,7 @@ You can open it with Java Mission Control (JMC).
 
 You can open it with Java Mission Control. 
 
-Below a JFR file for Maven 3.2.5 and open with JMC 5.5:
+Below a JFR file for Maven 3.2.5 and opened with JMC 5.5:
 <p align="center">
     <img src="measures/Maven3.2.5-JMC.5.5JPG.jpg">
 </p>
