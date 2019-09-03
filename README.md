@@ -132,35 +132,6 @@ Message: The program generated 20 482 exceptions per second during 26,722 s star
 03/09/19 17:08:31.
 ```
 
-Changement version de Maven
-
- Voir d'où vient l'allocation en heap
- En 3.2.5 mettre copie écran avec tableau de char[]
- 
- Mettre copie écran 3.6.2
- 
-
-
- @ExpectNoJvmIssue
-
-[JVM annotations](https://github.com/quick-perf/doc/wiki/JVM-annotations)
-
-[QuickPerf documentation](https://github.com/quick-perf/doc/wiki/QuickPerf)
-
-:octocat: Github repository [here](https://github.com/quick-perf/quickperf)
-
-Mesure profiling + JMC
-
-Montrer exemples capture JMC pour 3.5.2 et 3.6.2
-
-=> 1 thread
-
-Faire tuto pour ouvrir JFR dans JMC ancien et récent
-
-
-Mettre exemple @ExpectNoJVM issue
-
-
 # Acknowledgments
 Many thanks to Hervé Boutemy for his help and support to start this project.
 
