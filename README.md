@@ -74,7 +74,8 @@ You have also to give a value for the following properties contained in the [mav
 * maven.version.to
 * warmup.number
 * measures.number-by-maven-version
-The meaning of these properties is given in the [maven-bench.properties](src/test/resources/maven-bench.properties).
+
+The meaning of these properties is given in the [maven-bench.properties](src/test/resources/maven-bench.properties) file.
 
 Expliquer fichier property
 
