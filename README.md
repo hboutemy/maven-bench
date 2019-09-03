@@ -38,7 +38,7 @@ git checkout c409ab7aabb971065fc8384a861904d2a2819be5
 ```
 This Apache Camel version contains 841 modules.
 
-The *maven.binaries.path* property the path where the needed Maven distributions will be automatically downloaded by the tests. Downloads are performed during *@Before* execution.
+The *maven.binaries.path* property corresponds to the path where the needed Maven distributions will be automatically downloaded by the tests. Downloads are performed during *@Before* execution.
 If you want to do measures on Maven head you can execute the following commands:
 ```
 git clone https://github.com/apache/maven.git
