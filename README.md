@@ -116,12 +116,21 @@ You can open it with Java Mission Control (JMC).
 
 You can open it with Java Mission Control. 
 
+Below a JFR file for Maven 3.2.5 and open with JMC 5.5:
 <p align="center">
     <img src="measures/Maven3.2.5-JMC.5.5JPG.jpg">
 </p>
 
 
-head
+By the way, you can also benefit from an automatic performance analysis with [@ExpectNoJvmIssue](https://github.com/quick-perf/doc/wiki/JVM-annotations#ExpectNoJvmIssue).
+For example, the following warning is reported with Maven 3.2.5:
+```
+Rule: Thrown Exceptions
+Severity: WARNING
+Score: 97
+Message: The program generated 20 482 exceptions per second during 26,722 s starting at 
+03/09/19 17:08:31.
+```
 
 Changement version de Maven
 
@@ -130,6 +139,8 @@ Changement version de Maven
  
  Mettre copie écran 3.6.2
  
+
+
  @ExpectNoJvmIssue
 
 [JVM annotations](https://github.com/quick-perf/doc/wiki/JVM-annotations)
