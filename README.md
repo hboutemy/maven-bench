@@ -3,7 +3,7 @@
 <p><h3>This project is a test bench to measure and investigate heap allocation of Apache Maven.</h3></p>
 </blockquote>
 </div>
-<br>
+
 <p align="center">
   <a href="#General-set-up">General set up</a> •
   <a href="#Benchmark-heap-allocation-of-several-Maven-releases">Benchmark heap allocation of several Maven releases</a>
