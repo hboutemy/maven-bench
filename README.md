@@ -27,7 +27,7 @@ This project contains two types of test.
 
 This general set up part describes configurations common to both test.
 
-For both tests, you have to give a value for the *project-under-test.path* and *maven.binaries.path* properties contained in *maven-bench.properties* file. The other properties are only used by *MvnValidateAllocationByMaven3VersionTest*.
+:mag_right: For both tests, you have to give a value for the *project-under-test.path* and *maven.binaries.path* properties contained in *maven-bench.properties* file. The other properties are only used by *MvnValidateAllocationByMaven3VersionTest*.
 
 In this project we use [QuickPerf](https://github.com/quick-perf/quickperf) to measure and investigate heap allocation level.
 
